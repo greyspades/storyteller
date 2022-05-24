@@ -5,11 +5,11 @@ module.exports = ({ env }) => ({
   connection: {
     client: 'postgres',
     connection: {
-      host: config.host,
-      port: config.port,
-      database: config.database,
-      user: config.user,
-      password: config.password,
+      host: `${process.env.DATABASE_HOST}`,
+      port: `${process.env.DATABASE_PORT}`,
+      database: `${process.env.DATABASE_NAME}`,
+      user: `${process.env.DATABASE_USERNAME}`,
+      password:`${process.env.DATABASE_PASSWORD}`, 
     //   ssl: {
     //     rejectUnauthorized: false
     //   },
@@ -39,6 +39,7 @@ module.exports = ({ env }) => ({
 //     ssl: { "rejectUnauthorized": false }
 //     },
 //     options: {
+//         ssl:false
 //     },
 //     },
 //     },
